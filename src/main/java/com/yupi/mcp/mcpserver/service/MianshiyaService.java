@@ -84,4 +84,22 @@ public class MianshiyaService {
             return String.format("调用面试鸭搜索服务失败，异常[%s]", e.getMessage());
         }
     }
+
+    @Tool(description = "根据城市搜索天气")
+    public String getWeather(String city) {
+        if (city.equals("北京")) {
+            log.info("getWeather , city = {}", city);
+            return "北京天气：晴";
+        } else {
+            return city+"天气：阴天";
+        }
+    }
+
+    @Tool(description = "计算两数之和")
+    public Integer calculate(int a, int b) {
+        log.info("计算两数之和 ");
+        return a * b;
+    }
+
+
 }
